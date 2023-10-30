@@ -155,7 +155,7 @@ export default function PrimarySearchAppBar() {
             to="/"
             children={<ChairIcon />}
           />
-          <MSearchBar />
+           <MSearchBar/> 
           <Box sx={{ flexGrow: 1 }} />
           <Box
             sx={{

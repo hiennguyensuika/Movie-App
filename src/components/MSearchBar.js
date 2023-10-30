@@ -15,25 +15,22 @@ const Search = styled("div")(({ theme }) => ({
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(70),
-    width: "auto",
+    marginLeft: theme.spacing(10),
+    // width: "auto",
   },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(3, 1),
   height: "100%",
   position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  pointerEvents: "none"
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(4.5, 0.5, 0.5, 0.5),
+    padding: theme.spacing(3.5, 0.5, 0.5, 0.5),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
@@ -43,10 +40,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: "40ch",
     },
     "&::placeholder":{
-      fontSize:"25px;"
+      fontSize:"25px",
     }
   },
 }));
+
 
 function MSearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -92,7 +90,12 @@ function MSearchBar() {
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
-     <Box component="ul" sx={{ display: "flex", flexWrap: "wrap", pl: 0 }}>
+     <Box component="ul" sx={{ 
+      display: "flex", 
+      flexWrap: "wrap", 
+      pl: 0 ,
+      // justifyContent: "center", 
+      }}>
         {searchResults.map((movie) => (
           <Box
             key={movie.id}
@@ -103,7 +106,8 @@ function MSearchBar() {
               p: 2,
               m: 1,
               borderRadius: 2,
-              width: 300,
+              width: "100%",
+              maxWidth: 300,// Limit the width of each search result box
             }}
           >
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} width="100%" />
