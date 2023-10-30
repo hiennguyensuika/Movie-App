@@ -36,7 +36,7 @@ function HomePage() {
         sx={{
           minHeight: "100vh",
           minWidth:"100%",
-          bgcolor:"hsla(37, 90%, 13%, 1)",
+          bgcolor:"hsla(341, 18%, 3%, 1)",
         }}
       >
         <Grid item direction="column" container>

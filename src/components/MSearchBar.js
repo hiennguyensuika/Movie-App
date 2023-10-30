@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: "hsla(37, 87%, 19%, 1)",
+  backgroundColor: "hsla(302, 19%, 77%, 0.7)",
   "&:hover": {
     backgroundColor: "alpha(theme.palette.common.white, 0.25)",
   },
