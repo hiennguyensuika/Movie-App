@@ -28,12 +28,9 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Adjust the styles for screens with a maximum width of 600px (iPhone devices) */
+@media only screen and (max-width: 600px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
   }
 }
-

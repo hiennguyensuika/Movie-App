@@ -6,17 +6,39 @@ import MainHeader from "./MainHeader";
 
 function MainLayout() {
   return (
-    <Grid container justifyContent="center">
-      <Grid item xs={12}>
-        <MainHeader />
+    <div style={{ overflowX: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <Grid
+        container
+        direction="column"
+        justifyContent="space-between"
+        alignItems="center"
+        style={{
+          padding: '1rem',
+          boxSizing: 'border-box',
+          maxWidth: '100%',
+        }}
+      >
+        <Grid item>
+          <MainHeader />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={10}
+          md={8}
+          lg={6}
+          style={{
+            marginTop: '2rem',
+            width: '100%',
+          }}
+        >
+          <Outlet />
+        </Grid>
+        <Grid item>
+          <MainFooter />
+        </Grid>
       </Grid>
-      <Grid item xs={10} mt={5}>
-        <Outlet />
-      </Grid>
-      <Grid item xs={12}>
-        <MainFooter />
-      </Grid>
-    </Grid>
+    </div>
   );
 }
 

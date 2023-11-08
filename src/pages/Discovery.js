@@ -10,7 +10,7 @@ import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import { Link, useParams } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
-//APIKEY TRONG ENV
+
 function DiscoveryPage() {
   const [loading, setLoading] = useState();
   const [movieList, setMovieList] = useState([]);
@@ -60,7 +60,7 @@ function DiscoveryPage() {
       </Grid>
       <Pagination
         size="large"
-        count={10}
+        // count={10}
         sx={{ display: "flex", justifyContent: "center", margin: "2rem" }}
         renderItem={(item) => (
           <PaginationItem
