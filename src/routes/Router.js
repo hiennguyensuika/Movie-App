@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-import { BrowserRoute as Switch, Route} from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Homepage from "../pages/Homepage";
 import Discovery from "../pages/Discovery";
@@ -9,9 +8,7 @@ import MovieDetail from "../pages/MovieDetail";
 import FavoritePage from "../pages/Favorite";
 import NoMatch from "../pages/NoMatch";
 import { useAuth } from "../contexts/AuthContext";
-// import SearchPage from "../pages/SearchPage";
-import SearchResultsPage from "../components/SearchResultPage";
-import MSearchBar from "../components/MSearchBar";
+import SearchResult from "../components/SearchResult";
 
 function Router() {
   let location = useLocation();
@@ -36,16 +33,7 @@ function Router() {
           <Route index element={<Homepage />} />
           <Route path="discovery/:pageId" element={<Discovery />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
-          {/* <Route path="/search/:search" element={<SearchPage />} /> */}
-          <Switch>
-        <Route exact path="/">
-          <MSearchBar />
-        </Route>
-        <Route path="/search/:searchTerm">
-          <SearchResultsPage />
-        </Route>
-      </Switch>
-  
+          <Route path="/search/:search" element={<SearchResult />} />
           <Route path="/form" element={<FormPage />} />
           <Route path="*" element={<NoMatch />} />
           <Route
@@ -68,8 +56,3 @@ function Router() {
 }
 
 export default Router;
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MSearchBar from "./MSearchBar";
-import SearchResultsPage from "./SearchResultsPage";
-

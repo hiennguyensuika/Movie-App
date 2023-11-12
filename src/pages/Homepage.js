@@ -8,7 +8,8 @@ import Category from "../components/Category";
 function HomePage() {
   const [loadingTrending, setLoadingTrending] = useState();
   const [trendingList, setTrendingList] = useState([]);
-  const [cutInitial, setCutInitial] = useState([]);
+  const [cutInitial, setCutInitial] = useState();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,53 +29,33 @@ function HomePage() {
   }, []);
 
   return (
-    <Grid
-    container
-    direction="column"
-    justifyContent="center"
-    alignItems="center"
-    sx={{
-      minHeight: "100vh",
-      bgColor: "hsla(341, 18%, 3%, 1)",
-      padding: "1rem",
-    }}
-  >
-    <Grid
-      item
-      xs={12}
-      sm={10}
-      md={8}
-      lg={6}
-      xl={4}
-      sx={{
-        width: "100%",
-        maxWidth: "100%",
-      }}
-    >
-      <TrendingCardGroup
-        trendingList={trendingList}
-        cutInitial={cutInitial}
-        loadingTrending={loadingTrending}
-      />
-    </Grid>
+    <>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          minHeight: "100vh",
+          minWidth:"100%",
+          bgColor:"hsla(341, 18%, 3%, 1)",
+          
+        }}
+      >
+        <Grid item direction="column" container>
+          <TrendingCardGroup
+            trendingList={trendingList}
+            cutInitial={cutInitial}
+            loadingTrending={loadingTrending}
+          />
+        </Grid>
 
-    <Grid
-      item
-      mt={5}
-      xs={12}
-      sm={10}
-      md={8}
-      lg={6}
-      xl={4}
-      sx={{
-        width: "100%",
-        maxWidth: "100%",
-      }}
-    >
-      <Category />
-    </Grid>
-  </Grid>
-);
+        <Grid item direction="column" mt={5} container>
+          <Category />
+        </Grid>
+      </Grid>
+    </>
+  );
 }
-export default HomePage;
 
+export default HomePage;
